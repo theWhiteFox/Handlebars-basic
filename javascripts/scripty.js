@@ -1,27 +1,32 @@
-$(function() {
-'use strict';
-// template script 
-var theTemplateScript = $("#expression-template").html();
+$(function () {
+    'use strict';
+    // template script 
+    var theTemplateScript = $("#example-template").html();
 
-// compile the template
-var theTemplate = Handlebars.compile(theTemplateScript);
+    // compile the template
+    var theTemplate = Handlebars.compile(theTemplateScript);
 
-// define data
-var context = {
-    "description": {
-        "escaped": "Using {{}} brackets will result in escaped HTML:",
-        "unescaped": "Using {{{}}} will leave the context as it is:"
-    },
-    "example": "<button> Hello </button>"
-};
+    // define data
+    var context = {
+        people: [
+            { firstName: 'Tyrion', lastName: 'Lannister' },
+            { firstName: 'Bran', lastName: 'Stark' },
+            { firstName: 'Daenerys', lastName: 'Targaryen' },
+            { firstName: 'John', lastName: 'Snow' },
+            { firstName: 'Cersei', lastName: 'Lannister' },
 
-// pass data to theTemplate
-var theCompiledHtml = theTemplate(context);
+        ]
+    };
 
-// add the complied html to the page
-$('.content-placeholder').html(theCompiledHtml);
+    // pass data to theTemplate
+    var theCompiledHtml = theTemplate(context);
 
-console.log("Address:", context); 
+    // add the complied html to the page / document
+    // $(document.body).html(theCompiledHtml);
+
+    // add the complied html to the div
+    $('.content-placeholder').html(theCompiledHtml);
+
 });
 
 
