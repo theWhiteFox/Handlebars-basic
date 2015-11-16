@@ -39,8 +39,15 @@
         var appEl = document.getElementById('app');
         appEl.innerHTML = template({ name: 'Handlebars' });
       </script>
-      <script id="address-template" type="text/x-handlebars-template">
-      <p>You can find me in {{city}}. My address is {{number}} {{street}}.</p> 
+
+      <script id="expression-template" type="text/x-handlebars-template">
+      {{description.escaped}}
+      {{example}}
+      
+      <br><br>
+      
+      {{description.unescaped}}
+      {{{example}}}      
       </script>
       <!--content is displayed here-->
       <div class="content-placeholder"></div>
