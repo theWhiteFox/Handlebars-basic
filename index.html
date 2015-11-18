@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
 
   <title>Handlebars-basic by theWhiteFox</title>
+  <script src="https://raw.github.com/janl/mustache.js/master/mustache.js"></script>
   <script src="bower_components/handlebars/handlebars.min.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="javascripts/scripty.js"></script>
@@ -34,22 +35,40 @@
       <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="false"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
-      <script id="block-expressions-template" type="text/x-handlebars-template">  
-      
-      <p>The <b> {{#uppercase}} konami {{/uppercase}} </b> Code is a cheat that appears in many video games. </p>
-      
-      <p>During the title screen before the game demo begins, the player could press the following sequence of buttons on the game controller to enable the cheat: </p> 
-      
-      <p>{{#uppercase}}{{code}}{{/uppercase}}</p>
-      
-      <p>The code is also present as an Easter egg on a number of websites.</p>
+      <script id="block-expressions-template" type="text/x-handlebars-template">
 
+        <p>The <b> {{#uppercase}} konami {{/uppercase}} </b> Code is a cheat that appears in many video games. </p>
+
+        <p>During the title screen before the game demo begins, the player could press the following sequence of buttons on
+          the game controller to enable the cheat: </p>
+
+        <p>{{#uppercase}}{{code}}{{/uppercase}}</p>
+
+        <p>The code is also present as an Easter egg on a number of websites.</p>
+
+      </script>
+
+      <script id="myTemplate" type="text/x-handlebars-template">
+        <h1>{{title}}</h1>
+        <ul>
+          {{#names}}
+          <li>{{name}}</li>
+          {{/names}}
+        </ul>
       </script>
 
       <!--content is displayed here-->
       <div class="content-placeholder"></div>
-      
+
+      <div class="content-placeholder-two"></div>
+
     </section>
+    <h1>{{title}}</h1>
+    <ul>
+      {{#names}}
+      <li>{{name}}</li>
+      {{/names}}
+    </ul>
   </div>
 </body>
 
