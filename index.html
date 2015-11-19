@@ -9,7 +9,6 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
 
   <title>Handlebars-basic by theWhiteFox</title>
-  <script src="https://raw.github.com/janl/mustache.js/master/mustache.js"></script>
   <script src="bower_components/handlebars/handlebars.min.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="javascripts/scripty.js"></script>
@@ -62,13 +61,18 @@
 
       <div class="content-placeholder-two"></div>
 
+      <div id="languages">
+        <script id="languagesTpl" type="text/x-handlebars-template">
+         
+            {{#list languages}}
+               {{{formatLanguage name}}} was created in the year {{year}}
+            {{/list}}
+         
+        </script>
+      </div>
+
     </section>
-    <h1>{{title}}</h1>
-    <ul>
-      {{#names}}
-      <li>{{name}}</li>
-      {{/names}}
-    </ul>
+
   </div>
 </body>
 

@@ -47,13 +47,31 @@ $(function () {
 
     $('.content-placeholder-two').html(result);
 
-    var template = '<h1>{{title}}</h1><ul>{{#names}}<li>{{name}}</li>{{/names}}</ul>';
-    var data = { "title": "Story", "names": [{ "name": "Tarzan" }, { "name": "Jane" }] };
+    var data = {
+        languages: [
+            { name: "<strong>JavaScript</strong>", year: "1995", developer: { firstName: "Brendan", lastName: "Eich" } },
+            { name: "<strong>Java</strong>", year: "1995", developer: { firstName: "James", lastName: "Gosling" } },
+            { name: "<strong>C#</strong>", year: "2000" },
+            { name: "<strong>PHP</strong>", year: "1998", developer: { firstName: "Rasmus", lastName: "Lerdorf" } }
+        ]
+    }
 
-    var result = Mustache.render(template, data);
+    Handlebars.registerHelper("formatLanguage", function (language) {
+        return '-<code>' + language + '-</code>';
+    });
     
-    document.body.innerHTML = result;
-
+    Handlebars.registerHelper("list", function(items, options) {
+       var out = "<ul>";
+       
+       for (var index = 0, l = items.length; index < l; index++) {
+           out = out + "<li>" + options.fn(items[index]) + "</li>"; 
+       } 
+       return out + "</ul>"
+    });
+    
+    var template = $("#languagesTpl").html();
+    var html = Handlebars.compile(template);
+    $("#languages").html(html(data));
 });
 
 
