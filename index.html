@@ -63,11 +63,19 @@
 
       <div id="languages">
         <script id="languagesTpl" type="text/x-handlebars-template">
-         
-            {{#list languages}}
-               {{{formatLanguage name}}} was created in the year {{year}}
-            {{/list}}
-         
+          <!--languages-->
+          <h1>{{title}}</h1> 
+          {{#each languages}}
+          <ul>
+            <li>{{@index}} {{{formatLanguage name}}}</li>
+          </ul>
+          {{/each}}  
+          
+          <!--shopping-->
+          <h1>{{shoptitle}}</h1> 
+          {{#unless shopping}}
+          Do include your favorite languages
+          {{/unless}}
         </script>
       </div>
 

@@ -48,30 +48,37 @@ $(function () {
     $('.content-placeholder-two').html(result);
 
     var data = {
+        "title": "Languages",
         languages: [
             { name: "<strong>JavaScript</strong>", year: "1995", developer: { firstName: "Brendan", lastName: "Eich" } },
             { name: "<strong>Java</strong>", year: "1995", developer: { firstName: "James", lastName: "Gosling" } },
             { name: "<strong>C#</strong>", year: "2000" },
             { name: "<strong>PHP</strong>", year: "1998", developer: { firstName: "Rasmus", lastName: "Lerdorf" } }
-        ]
+        ],
+        type: "Programming languages"
     }
 
     Handlebars.registerHelper("formatLanguage", function (language) {
         return '-<code>' + language + '-</code>';
     });
-    
-    Handlebars.registerHelper("list", function(items, options) {
-       var out = "<ul>";
-       
-       for (var index = 0, l = items.length; index < l; index++) {
-           out = out + "<li>" + options.fn(items[index]) + "</li>"; 
-       } 
-       return out + "</ul>"
+
+    Handlebars.registerHelper("list", function (items, options) {
+        var out = "<ul>";
+
+        for (var index = 0, l = items.length; index < l; index++) {
+            out = out + "<li>" + options.fn(items[index]) + "</li>";
+        }
+        return out + "</ul>"
     });
-    
+
     var template = $("#languagesTpl").html();
     var html = Handlebars.compile(template);
     $("#languages").html(html(data));
+
+    var data = {        
+        shopping: []
+    }
+
 });
 
 
