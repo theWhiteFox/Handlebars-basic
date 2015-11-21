@@ -9,8 +9,9 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
 
   <title>Handlebars-basic by theWhiteFox</title>
-  <script src="bower_components/handlebars/handlebars.min.js"></script>
+  <script src="bower_components/handlebars/handlebars.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="templates/languages.tpl.js"></script>
   <script src="javascripts/scripty.js"></script>
 </head>
 
@@ -47,36 +48,21 @@
 
       </script>
 
-      <script id="myTemplate" type="text/x-handlebars-template">
+      <!--<script id="myTemplate" type="text/x-handlebars-template">
         <h1>{{title}}</h1>
         <ul>
           {{#names}}
           <li>{{name}}</li>
           {{/names}}
         </ul>
-      </script>
+      </script>-->
 
       <!--content is displayed here-->
-      <div class="content-placeholder"></div>
+      <!--<div class="content-placeholder"></div>
 
-      <div class="content-placeholder-two"></div>
+      <div class="content-placeholder-two"></div>-->
 
       <div id="languages">
-        <script id="languagesTpl" type="text/x-handlebars-template">
-          <!--languages-->
-          <h1>{{title}}</h1> 
-          {{#each languages}}
-          <ul>
-            <li>{{@index}} {{{formatLanguage name}}}</li>
-          </ul>
-          {{/each}}  
-          
-          <!--shopping-->
-          <h1>{{shoptitle}}</h1> 
-          {{#unless shopping}}
-          Do include your favorite languages
-          {{/unless}}
-        </script>
       </div>
 
     </section>
