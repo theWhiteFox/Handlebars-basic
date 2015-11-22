@@ -19,3 +19,4 @@
 - [Handlebars Helpers](https://github.com/assemble/handlebars-helpers "Title") – a collection of 130+ handlebars helpers in ~20 categories.
 - [SWAG](https://github.com/elving/swag) – more handlebars helpers
 - [Handlebars API Reference](http://handlebarsjs.com/reference.html)
+- [JvaScript.isSexy hbs Tut](http://javascriptissexy.com/handlebars-js-tutorial-learn-everything-about-handlebars-js-javascript-templating/)
